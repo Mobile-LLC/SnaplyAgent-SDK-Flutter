@@ -107,6 +107,38 @@ void main() {
     expect(controller.offset, 120);
   });
 
+  testWidgets('a scroll over a hidden area still moves the screen', (
+    tester,
+  ) async {
+    final controller = ScrollController();
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: ListView(
+            controller: controller,
+            children: [
+              const SnaplyRedact(
+                child: SizedBox(height: 400, child: Text('4242 4242')),
+              ),
+              for (var i = 0; i < 60; i++)
+                SizedBox(height: 50, child: Text('row $i')),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    await send(tester, {
+      'action': 'scroll',
+      'x': 200.0,
+      'y': 200.0,
+      'dx': 0.0,
+      'dy': 90.0,
+    });
+
+    expect(controller.offset, 90);
+  });
+
   testWidgets(
     'typed text goes into the focused field at the cursor; backspace takes one character',
     (tester) async {

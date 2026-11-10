@@ -97,8 +97,7 @@ and an API 34 emulator, against a local Snaply backend.
 | Dashboard rule by identifier | ✓ | ✓ |
 | Dashboard rule by text | ✓ | ✓ |
 | Live view | ✓ | ✓ |
-| Remote control — tap, type, Enter | ✓ | ✓ |
-| Remote control — scroll | not measured | ✓ |
+| Remote control — tap, scroll, type, Enter | ✓ | ✓ |
 | A hidden field refuses a tap | ✓ | ✓ |
 | A hidden field the person focused refuses typed text | not measured on a device (the same Dart code, unit-tested) | ✓ |
 | `identify`, `reset`, `supportCode`, `showSupportCode` | ✓ | ✓ |

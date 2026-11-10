@@ -37,16 +37,16 @@ abstract final class SnaplyInput {
           (arguments['dx'] as num?)?.toDouble() ?? 0,
           (arguments['dy'] as num?)?.toDouble() ?? 0,
         );
-        if (!_isHidden(position)) {
-          GestureBinding.instance.handlePointerEvent(
-            PointerScrollEvent(
-              viewId: _viewId,
-              device: _device,
-              position: position,
-              scrollDelta: delta,
-            ),
-          );
-        }
+        // Not refused over a hidden area: a scroll moves the screen, it does not touch the field — the
+        // native SDKs scroll from any point as well.
+        GestureBinding.instance.handlePointerEvent(
+          PointerScrollEvent(
+            viewId: _viewId,
+            device: _device,
+            position: position,
+            scrollDelta: delta,
+          ),
+        );
         return true;
       case 'type':
         final text = arguments['text'];
