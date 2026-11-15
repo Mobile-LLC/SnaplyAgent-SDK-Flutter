@@ -1,3 +1,13 @@
+## 1.0.1
+
+Brings the Snaply Agent iOS SDK 2.49.1 and Android SDK 2.40.1, each at exactly that version. No change to the
+Dart API.
+
+* The consent record fixes of both SDKs: an Allow that never reached Snaply is not kept, a live session lost
+  mid-way needs a new Allow, and a screenshot approval never lasts past 45 minutes.
+* The iOS SDK is pinned to one version, as the Android one always was: a new SDK version reaches an app with a
+  new version of this package.
+
 ## 1.0.0
 
 The first release. Needs the Snaply Agent iOS SDK 2.48.0 and Android SDK 2.39.0, which it brings in itself.
