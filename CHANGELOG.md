@@ -1,3 +1,12 @@
+## 1.1.0
+
+Brings the Snaply Agent iOS SDK 2.50.0 and Android SDK 2.41.0, each at exactly that version. No change to the
+Dart API.
+
+* When the app identifies a different user (`Snaply.identify` with another id), an open screenshot approval on the
+  device ends and support asks again. A live share that is already running continues. Signing out alone, a first
+  sign-in and the same user signing in again change nothing.
+
 ## 1.0.1
 
 Brings the Snaply Agent iOS SDK 2.49.1 and Android SDK 2.40.1, each at exactly that version. No change to the
