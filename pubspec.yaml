@@ -1,6 +1,6 @@
 name: snaply_agent
 description: "Snaply Agent for Flutter — consent-first screen capture for support teams: screenshots, live view and remote control, with on-device redaction."
-version: 1.1.0
+version: 1.2.0
 homepage: https://snaplyagent.com/docs
 repository: https://github.com/Mobile-LLC/SnaplyAgent-SDK-Flutter
 environment:

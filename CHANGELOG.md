@@ -1,3 +1,14 @@
+## 1.2.0
+
+Brings the Snaply Agent iOS SDK 2.51.0 and Android SDK 2.42.0, each at exactly that version. No change to the
+Dart API.
+
+* When the app identifies a different user, the agent's console now says so: "Someone else signed in on {name}'s
+  device — screenshots for this call ended." (the SDKs report the new reason `switched`; before, the console read
+  "the device no longer holds the screenshot approval").
+* A correction to 1.1.0's note: signing out does end an open screenshot approval — the Snaply server ends it on a
+  sign-out — though the SDK itself does not.
+
 ## 1.1.0
 
 Brings the Snaply Agent iOS SDK 2.50.0 and Android SDK 2.41.0, each at exactly that version. No change to the
