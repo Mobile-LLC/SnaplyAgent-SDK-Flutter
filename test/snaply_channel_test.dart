@@ -27,7 +27,10 @@ void main() {
 
     await Snaply.configure(
       key: 'snap_live_abc',
-      environment: const SnaplyEnvironment.custom('http://10.0.2.2:5100'),
+      environment: const SnaplyEnvironment.custom(
+        'http://10.0.2.2:5100',
+        serverKeys: [SnaplyEnvironment.developmentMaster],
+      ),
       user: const SnaplyUser(id: 'usr_1', name: 'Maya'),
       collectVendorId: false,
       language: 'hy',
@@ -37,6 +40,7 @@ void main() {
     expect(sent?.arguments, {
       'key': 'snap_live_abc',
       'environment': 'http://10.0.2.2:5100',
+      'serverKeys': ['BBfK1HoW7C4QbWBHQYk3qP3TJRqyEh9gBw4lp2tmOR3H69m_YdmU24iYVDbWZ_0uqNqKiDwtvY7OfvVpwGBcLzA'],
       'userId': 'usr_1',
       'userName': 'Maya',
       'collectVendorId': false,
@@ -54,6 +58,7 @@ void main() {
     await Snaply.configure(key: 'snap_live_abc');
 
     expect((sent?.arguments as Map)['environment'], isNull);
+    expect((sent?.arguments as Map)['serverKeys'], isEmpty);
     expect((sent?.arguments as Map)['userId'], isNull);
   });
 

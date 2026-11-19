@@ -66,7 +66,7 @@ public class SnaplyAgentPlugin: NSObject, FlutterPlugin, SnaplyHostedView {
             guard let url = URL(string: custom) else {
                 return result(FlutterError(code: "insecure_environment", message: "environment is not a URL.", details: 0))
             }
-            environment = .custom(url)
+            environment = .custom(url, serverKeys: arguments["serverKeys"] as? [String] ?? [])
         }
         Snaply.on(callbacks)
         handOver(locateFlutterView())

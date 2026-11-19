@@ -90,7 +90,9 @@ class SnaplyAgentPlugin :
                     Snaply.init(
                         context = activity ?: context,
                         key = call.argument<String>("key").orEmpty(),
-                        environment = call.argument<String>("environment")?.let { SnaplyEnvironment.Custom(it) } ?: SnaplyEnvironment.Live,
+                        environment = call.argument<String>("environment")
+                            ?.let { SnaplyEnvironment.Custom(it, call.argument<List<String>>("serverKeys").orEmpty()) }
+                            ?: SnaplyEnvironment.Live,
                         user = call.argument<String>("userId")?.let { SnaplyUser(it, call.argument<String>("userName")) },
                         collectVendorId = call.argument<Boolean>("collectVendorId") ?: true,
                         language = call.argument<String>("language") ?: "en",

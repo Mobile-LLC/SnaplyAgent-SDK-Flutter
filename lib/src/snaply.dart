@@ -35,6 +35,7 @@ abstract final class Snaply {
     return _invoke('configure', {
       'key': key,
       'environment': environment.url,
+      'serverKeys': environment.serverKeys,
       'userId': user?.id,
       'userName': user?.name,
       'collectVendorId': collectVendorId,
