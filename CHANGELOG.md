@@ -1,12 +1,15 @@
-## Unreleased
+## 1.3.0
 
-Everything the SDK and Snaply's server exchange is sealed a second time inside HTTPS. The native SDKs do it and this
-package brings them; its number and theirs are set the day it ships.
+Brings the Snaply Agent iOS SDK 2.52.0 and Android SDK 2.43.0, each at exactly that version.
 
-* `SnaplyEnvironment.custom` takes `serverKeys` — the master public keys of that server, with its address — and
-  `SnaplyEnvironment.developmentMaster` is the key of a Snaply stack on your own machine. An app that talks to the
-  live server changes nothing.
-* Not built against the sealing native SDKs yet: the plugin code compiles only once this package brings them.
+Everything the SDK and Snaply's server exchange is now sealed a second time inside HTTPS: registration, prompts,
+answers, screenshots, live frames and the live connection. The native SDKs do it. An app that talks to the live
+server changes nothing and configures nothing.
+
+* **`SnaplyEnvironment.custom` now requires `serverKeys`** — the master public keys of that server, with its
+  address. An app that names its own server adds them; `SnaplyEnvironment.developmentMaster` is the key of a Snaply
+  stack on your own machine.
+* The consent sheet's logo travels inside the seal too.
 
 ## 1.2.0
 

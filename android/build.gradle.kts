@@ -1,5 +1,5 @@
 group = "com.snaplyagent.snaply_agent"
-version = "1.2.0"
+version = "1.3.0"
 
 buildscript {
     val kotlinVersion = "2.3.20"
@@ -54,5 +54,5 @@ kotlin {
 
 dependencies {
     // api: the plugin class implements the SDK's SnaplyHostedView, so the app compiles against it too.
-    api("com.snaplyagent:agent:2.42.0")
+    api("com.snaplyagent:agent:2.43.0")
 }

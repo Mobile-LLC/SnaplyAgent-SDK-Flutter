@@ -49,6 +49,25 @@ await Snaply.showSupportCode(); // …or the SDK shows it in its own sheet
 Add the app's identifier (bundle id, package name) to each product's allowed list in the console, or
 registration is refused with `origin_mismatch`.
 
+## A Snaply server of your own
+
+Everything the SDK and Snaply's server exchange is sealed a second time inside HTTPS, and the live server's keys are
+built in: an app that talks to the live server has nothing to set. A server of your own is named with its address
+and its master public keys together.
+
+```dart
+await Snaply.configure(
+  key: key,
+  environment: const SnaplyEnvironment.custom(
+    'https://snaply.your-company.example',
+    serverKeys: ['<your server's master public key>'],
+  ),
+);
+
+// A Snaply stack on your own machine uses one published key, good for nothing else:
+const local = SnaplyEnvironment.custom('http://localhost:5100', serverKeys: [SnaplyEnvironment.developmentMaster]);
+```
+
 ## What is hidden
 
 Everything is painted over **on the device, before the image is encoded** — the pixels underneath never
