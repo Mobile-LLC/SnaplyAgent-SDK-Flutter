@@ -1,3 +1,14 @@
+## 1.4.0
+
+Brings the Snaply Agent iOS SDK 2.53.0 and Android SDK 2.44.0, each at exactly that version. No change to the Dart
+API.
+
+* **Certificate pinning, for a workspace that turns it on.** When a workspace's owner, or Snaply's staff, turns the
+  switch on, the app talks only to a server showing the certificate Snaply's server published in its signed key list;
+  anything else between the phone and Snaply is refused before a byte is sent, and the call fails with the code
+  `pinning_refused`. A renewed certificate is followed by itself. Off by default: an app whose workspace leaves it off
+  behaves exactly as before. Nothing to configure.
+
 ## 1.3.0
 
 Brings the Snaply Agent iOS SDK 2.52.0 and Android SDK 2.43.0, each at exactly that version.
