@@ -1,3 +1,13 @@
+## 1.5.0
+
+Brings the Snaply Agent iOS SDK 2.54.0 and Android SDK 2.45.0, each at exactly that version. No change to the Dart
+API.
+
+* **Errors are read the way Snaply's server now sends them.** The server answers every refusal with HTTP 200 and the
+  real status and code inside the answer (a failed sign-in still with 401). The SDK reads both that and the older way,
+  so an app gets the same error, with the same status and code, from either server. An app on an older package reads
+  a refusal from the new server as a success until it updates.
+
 ## 1.4.0
 
 Brings the Snaply Agent iOS SDK 2.53.0 and Android SDK 2.44.0, each at exactly that version. No change to the Dart

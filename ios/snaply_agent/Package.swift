@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "FlutterFramework", path: "../FlutterFramework"),
-        .package(url: "https://github.com/Mobile-LLC/SnaplyAgent-SDK-iOS", exact: "2.53.0")
+        .package(url: "https://github.com/Mobile-LLC/SnaplyAgent-SDK-iOS", exact: "2.54.0")
     ],
     targets: [
         .target(
